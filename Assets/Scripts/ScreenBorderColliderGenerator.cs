@@ -50,14 +50,19 @@ namespace CometCleanUP
             rightCollider.localScale = new Vector3(colliderThickness, screenSize.y * 2, colliderThickness);
             rightCollider.position = new Vector3(cameraPos.x + screenSize.x + (rightCollider.localScale.x * 0.5f), cameraPos.y, zPosition);
 
+            leftCollider.localScale = new Vector3(colliderThickness, screenSize.y * 2, colliderThickness);
+            leftCollider.position = new Vector3(cameraPos.x - screenSize.x - (leftCollider.localScale.x * 0.5f), cameraPos.y, zPosition);
+
+            topCollider.localScale = new Vector3(screenSize.x * 2, colliderThickness, colliderThickness);
+            topCollider.position = new Vector3(cameraPos.x, cameraPos.y + screenSize.y + (topCollider.localScale.y * 0.5f), zPosition);
+
+            bottomCollider.localScale = new Vector3(screenSize.x * 2, colliderThickness, colliderThickness);
+            bottomCollider.position = new Vector3(cameraPos.x, cameraPos.y - screenSize.y - (bottomCollider.localScale.y * 0.5f), zPosition);
+
+
 
 
             
-        }
-
-        void Update()
-        {
-
         }
     }
 }

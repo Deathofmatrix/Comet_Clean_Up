@@ -29,15 +29,13 @@ namespace CometCleanUP
         }
         void Start()
         {
-            
+            PlayerManager.playerCharacter = gameObject;
         }
 
         void Update()
         {
             thrustInput = thrust.action.ReadValue<float>();
             turnInput = turn.action.ReadValue<float>();
-            Debug.Log(thrustInput);
-            Debug.Log(turnInput);
 
             ClampVelocity();
 
