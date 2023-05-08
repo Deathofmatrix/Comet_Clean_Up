@@ -29,19 +29,27 @@ namespace CometCleanUP
         {
             currentRigidbody2D = GetComponent<Rigidbody2D>();
             currentSpriteRenderer = GetComponent<SpriteRenderer>();
+            Debug.Log("awake");
         }
 
         private void Start()
         {
             targetPosition = PlayerManager.playerCharacter.transform;
+        }
 
-            currentSpriteRenderer.color = cometType.color;
+        public void LoadScriptableObjectData()
+        {
+            Debug.LogWarning("called data load");
+            Material currentMaterial = currentSpriteRenderer.material;
+
+            currentMaterial.color = cometType.color;
             moveSpeed = cometType.speed;
             cometValue = cometType.value;
         }
 
         private void Update()
         {
+            Debug.Log(cometType.color);
             heading = (Vector2)targetPosition.position - currentRigidbody2D.position;
             distance = heading.magnitude;
             direction = heading / distance;

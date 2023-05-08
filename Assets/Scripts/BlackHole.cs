@@ -10,7 +10,9 @@ namespace CometCleanUP
         {
             if (collision.gameObject.CompareTag("Comet"))
             {
-                Destroy(collision.gameObject);
+                collision.collider.isTrigger = true;
+                collision.gameObject.GetComponent<Animator>().Play("CometFade");
+                Destroy(collision.gameObject, 1f);
             }
         }
     }

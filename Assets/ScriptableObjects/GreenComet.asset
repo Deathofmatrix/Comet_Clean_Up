@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6729c3bc7ed50394cb5580b2c2a32f11, type: 3}
   m_Name: GreenComet
   m_EditorClassIdentifier: 
-  color: {r: 0.37241387, g: 1, b: 0, a: 1}
+  color: {r: 0, g: 1, b: 0, a: 1}
   speed: 6
   value: 2

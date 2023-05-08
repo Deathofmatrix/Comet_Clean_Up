@@ -6,7 +6,7 @@ namespace CometCleanUP
 {
     public class ScoreManager : MonoBehaviour
     {
-        public int totalScore;
+        public static int totalScore;
 
         private void OnEnable()
         {

@@ -19,6 +19,11 @@ namespace CometCleanUP
         [SerializeField] private float moveSpeed;
         [SerializeField] private float turnSpeed;
         [SerializeField] private float maxVelocity;
+
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioClip clip;
+
+        [SerializeField] private GameObject fire;
         
         private float thrustInput;
         private float turnInput;
@@ -36,6 +41,24 @@ namespace CometCleanUP
         {
             thrustInput = thrust.action.ReadValue<float>();
             turnInput = turn.action.ReadValue<float>();
+
+            bool clipPlayed = false;
+
+            if (thrustInput > 0 )
+            {
+                fire.SetActive(true);
+                if (clipPlayed == false )
+                {
+                    audioSource.PlayOneShot(clip);
+                    clipPlayed = true;
+                }
+            }
+            else
+            {
+                fire.SetActive(false);
+                audioSource.Stop();
+                clipPlayed= false;
+            }
 
             ClampVelocity();
 

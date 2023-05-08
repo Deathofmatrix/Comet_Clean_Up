@@ -32,6 +32,7 @@ namespace CometCleanUP
             {
                 GameObject newComet = Instantiate(cometPrefab, transform);
                 newComet.GetComponent<CometMovement>().cometType = cometTypes[Random.Range(0, cometTypes.Length)];
+                newComet.GetComponent<CometMovement>().LoadScriptableObjectData();
                 newComet.transform.position = PickRandomSpawnLocation();  
             }
         }
