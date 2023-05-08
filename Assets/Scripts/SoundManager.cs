@@ -10,6 +10,7 @@ namespace CometCleanUP
         public static SoundManager Instance;
 
         [SerializeField] private AudioSource m_AudioSource, _effectsSource;
+        [SerializeField] private AudioSource musicSource;
 
         private void Awake()
         {
@@ -23,10 +24,27 @@ namespace CometCleanUP
                 DontDestroyOnLoad(gameObject);
             }
         }
+        private void Start()
+        {
+            PlayMusic();
+        }
 
         public void PlaySound(AudioClip clip)
         {
             _effectsSource.PlayOneShot(clip);
+        }
+
+        public void PlayMusic()
+        {
+            Debug.Log("preplay");
+            if (musicSource.isPlaying) return;
+            Debug.Log("postplay");
+            musicSource.Play();
+        }
+
+        public void StopMusic()
+        {
+            musicSource.Stop();
         }
 
         public void ChangeMasterVolume(float value)

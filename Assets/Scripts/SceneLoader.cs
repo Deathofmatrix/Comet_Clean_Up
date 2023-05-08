@@ -19,5 +19,10 @@ namespace CometCleanUP
         {
             SceneManager.LoadScene(sceneToLoadInt);
         }
+
+        public void ResetScore()
+        {
+            ScoreManager.totalScore = 0;
+        }
     }
 }

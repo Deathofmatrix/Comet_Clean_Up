@@ -11,7 +11,7 @@ namespace CometCleanUP
 
         private void Start()
         {
-            m_TextMeshProUGUI.text = "-SCORE-\n" + ScoreManager.totalScore * 10;
+            m_TextMeshProUGUI.text = "-SCORE-\n" + ScoreManager.totalScore * 100;
         }
     }
 }

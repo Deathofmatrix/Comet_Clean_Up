@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace CometCleanUP
@@ -20,6 +21,7 @@ namespace CometCleanUP
             else
             {
                 timeValue = 0;
+                SceneManager.LoadScene(2);
             }
 
             DisplayTime(timeValue);
